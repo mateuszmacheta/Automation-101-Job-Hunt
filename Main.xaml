@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:Annotation.AnnotationText="UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="976,4605" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=System.Private.CoreLib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:Annotation.AnnotationText="UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap:VirtualizedContainerService.HintSize="985,4697" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.Collections;assembly=System.Private.CoreLib" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -42,6 +42,8 @@
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
       <x:String>System.Numerics</x:String>
       <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -115,7 +117,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="784,4540" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="784,4632" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="searchURL" />
       <Variable x:TypeArguments="sd:DataTable" Name="dtJobPostings">
@@ -124,13 +126,14 @@
         </Variable.Default>
       </Variable>
       <Variable x:TypeArguments="x:String" Name="urlPrefix" />
+      <Variable x:TypeArguments="ui:UiElement" Name="uiChrome" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BuildDataTable DisplayName="Build Data Table JobPostings" sap:VirtualizedContainerService.HintSize="722,100" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;PostingTitle&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;PostingURL&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;JobDescription&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Technologies&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;City&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;WorkMode&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;">
+    <ui:BuildDataTable DisplayName="Build Data Table JobPostings" sap:VirtualizedContainerService.HintSize="722,100" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;PostingTitle&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;PostingURL&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;JobDescription&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Technologies&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Location&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;WorkMode&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Salary&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;">
       <ui:BuildDataTable.DataTable>
         <OutArgument x:TypeArguments="sd:DataTable">
           <CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">dtJobPostings</CSharpReference>
@@ -148,7 +151,7 @@
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
               <InArgument x:TypeArguments="x:String">
-                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_21">"https://www.linkedin.com/jobs/search/?currentJobId=3808409148&amp;f_TPR=r86400&amp;geoId=91000000&amp;keywords=RPA&amp;location=European%20Union&amp;origin=JOB_SEARCH_PAGE_JOB_FILTER&amp;refresh=true"</CSharpValue>
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_27">"https://www.linkedin.com/jobs/search/?currentJobId=3829895855&amp;f_TPR=r604800&amp;geoId=91000000&amp;keywords=RPA&amp;location=European%20Union&amp;origin=JOB_SEARCH_PAGE_JOB_FILTER&amp;refresh=true"</CSharpValue>
               </InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
@@ -165,13 +168,13 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: (21) RPA Jobs in European Union | LinkedIn" sap:VirtualizedContainerService.HintSize="722,4165" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="4fd03500-15c1-4076-864a-afe8a1442efd" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: (21) RPA Jobs in European Union | LinkedIn" sap:VirtualizedContainerService.HintSize="722,4052" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="4fd03500-15c1-4076-864a-afe8a1442efd" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="LinkedIn" sap:VirtualizedContainerService.HintSize="688,3925" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="LinkedIn" sap:VirtualizedContainerService.HintSize="688,3795" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="uiJobTitles" />
               <Variable x:TypeArguments="x:String" Name="strTotalNumberOfJobs" />
@@ -194,40 +197,13 @@
                 </ui:Target>
               </ui:Activate.Target>
             </ui:Activate>
-            <uix:NGetText DisplayName="Get Text 'No. of results'" sap:VirtualizedContainerService.HintSize="626,197" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="4fd03500-15c1-4076-864a-afe8a1442efd" Version="V3">
-              <uix:NGetText.Target>
-                <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=3808409148&amp;f_TPR=r86400&amp;geoId=91000000&amp;keywords=RPA&amp;location=European%20Union&amp;origin=JOB_SEARCH_PAGE_JOB_FILTER&amp;refresh=true" CvTextArea="404, 242, 53, 12" CvType="AnyWordGroup" DesignTimeRectangle="406, 240, 50, 16" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='main' tag='SPAN' visibleinnertext='*results' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main' tag='SPAN' visibleinnertext='*results' type='' class='' /&gt;" Guid="d25497e8-25d2-4d9c-a975-0b9efac36402" ImageBase64="" InformativeScreenshot="52012bec59ed436d416582d36f551497.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(3) RPA Jobs in European Union | LinkedIn' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
-              </uix:NGetText.Target>
-              <uix:NGetText.TextString>
-                <OutArgument x:TypeArguments="x:String">
-                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">strTotalNumberOfJobs</CSharpReference>
-                </OutArgument>
-              </uix:NGetText.TextString>
-            </uix:NGetText>
-            <Assign sap:VirtualizedContainerService.HintSize="626,122" sap2010:WorkflowViewState.IdRef="Assign_4">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:Int32">
-                  <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">totalNumberOfJobs</CSharpReference>
-                </OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:Int32">
-                  <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">Int32.Parse(strTotalNumberOfJobs.Split()[0])</CSharpValue>
-                </InArgument>
-              </Assign.Value>
-            </Assign>
-            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="626,130" sap2010:WorkflowViewState.IdRef="WriteLine_3">
-              <InArgument x:TypeArguments="x:String">
-                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">"Total number of jobs is " + totalNumberOfJobs.ToString()</CSharpValue>
-              </InArgument>
-            </WriteLine>
-            <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each Page" sap:VirtualizedContainerService.HintSize="626,3262" sap2010:WorkflowViewState.IdRef="ForEach`1_2">
+            <ui:ForEach x:TypeArguments="x:Int32" CurrentIndex="{x:Null}" DisplayName="For Each Page" sap:VirtualizedContainerService.HintSize="626,3581" sap2010:WorkflowViewState.IdRef="ForEach`1_2">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:Int32">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:Int32" Name="start" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Job Posting Page" sap:VirtualizedContainerService.HintSize="592,3075" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                  <Sequence DisplayName="Job Posting Page" sap:VirtualizedContainerService.HintSize="592,3394" sap2010:WorkflowViewState.IdRef="Sequence_7">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Int32" Name="limitPerPage" />
                     </Sequence.Variables>
@@ -270,27 +246,54 @@
                         </InArgument>
                       </uix:NGoToUrl.Url>
                     </uix:NGoToUrl>
-                    <Assign sap:VirtualizedContainerService.HintSize="530,122" sap2010:WorkflowViewState.IdRef="Assign_5">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:Int32">
-                          <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">limitPerPage</CSharpReference>
-                        </OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:Int32">
-                          <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">Math.Min(25, totalNumberOfJobs - start)</CSharpValue>
-                        </InArgument>
-                      </Assign.Value>
-                    </Assign>
-                    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While Not All Results" sap:VirtualizedContainerService.HintSize="530,796" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While Not All Results" sap:VirtualizedContainerService.HintSize="530,1367" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
                       <ui:InterruptibleDoWhile.Body>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,642" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,1213" sap2010:WorkflowViewState.IdRef="Sequence_4">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:FindChildren DisplayName="Find Children Job Posting Titles" Filter="&lt;webctrl parentid='main' tag='UL' parentclass='jobs-search-results-list*' /&gt;&lt;webctrl href='/jobs/view/*' tag='A' /&gt;" sap:VirtualizedContainerService.HintSize="354,147" sap2010:WorkflowViewState.IdRef="FindChildren_2" Scope="FIND_DESCENDANTS">
+                          <uix:NGetText DisplayName="Get Text 'No. of results'" sap:VirtualizedContainerService.HintSize="434,197" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="4fd03500-15c1-4076-864a-afe8a1442efd" Version="V3">
+                            <uix:NGetText.Target>
+                              <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=3808409148&amp;f_TPR=r86400&amp;geoId=91000000&amp;keywords=RPA&amp;location=European%20Union&amp;origin=JOB_SEARCH_PAGE_JOB_FILTER&amp;refresh=true" CvTextArea="404, 242, 53, 12" CvType="AnyWordGroup" DesignTimeRectangle="406, 240, 50, 16" DesignTimeScaleFactor="1" ElementType="Text" FullSelectorArgument="&lt;webctrl parentid='main' tag='SPAN' visibleinnertext='*results' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='main' tag='SPAN' visibleinnertext='*results' type='' class='' /&gt;" Guid="d25497e8-25d2-4d9c-a975-0b9efac36402" ImageBase64="" InformativeScreenshot="52012bec59ed436d416582d36f551497.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(3) RPA Jobs in European Union | LinkedIn' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive" />
+                            </uix:NGetText.Target>
+                            <uix:NGetText.TextString>
+                              <OutArgument x:TypeArguments="x:String">
+                                <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_17">strTotalNumberOfJobs</CSharpReference>
+                              </OutArgument>
+                            </uix:NGetText.TextString>
+                          </uix:NGetText>
+                          <Assign sap:VirtualizedContainerService.HintSize="434,122" sap2010:WorkflowViewState.IdRef="Assign_6">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">
+                                <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_18">totalNumberOfJobs</CSharpReference>
+                              </OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">Int32.Parse(strTotalNumberOfJobs.Split()[0])</CSharpValue>
+                              </InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,130" sap2010:WorkflowViewState.IdRef="WriteLine_6">
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">"Total number of jobs is " + totalNumberOfJobs.ToString()</CSharpValue>
+                            </InArgument>
+                          </WriteLine>
+                          <Assign sap:VirtualizedContainerService.HintSize="434,122" sap2010:WorkflowViewState.IdRef="Assign_7">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">
+                                <CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">limitPerPage</CSharpReference>
+                              </OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_32">Math.Min(25, totalNumberOfJobs - start)</CSharpValue>
+                              </InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <ui:FindChildren DisplayName="Find Children Job Posting Titles" Filter="&lt;webctrl parentid='main' tag='UL' parentclass='jobs-search-results-list*' /&gt;&lt;webctrl href='/jobs/view/*' tag='A' /&gt;" sap:VirtualizedContainerService.HintSize="434,147" sap2010:WorkflowViewState.IdRef="FindChildren_2" Scope="FIND_DESCENDANTS">
                             <ui:FindChildren.Children>
                               <OutArgument x:TypeArguments="scg:IEnumerable(ui:UiElement)">
                                 <CSharpReference x:TypeArguments="scg:IEnumerable(ui:UiElement)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">uiJobTitles</CSharpReference>
@@ -307,7 +310,7 @@
                               </ui:Target>
                             </ui:FindChildren.Target>
                           </ui:FindChildren>
-                          <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll On Job Postings List" sap:VirtualizedContainerService.HintSize="354,297" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="10" ScopeIdentifier="4fd03500-15c1-4076-864a-afe8a1442efd" Version="V3">
+                          <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll On Job Postings List" sap:VirtualizedContainerService.HintSize="434,297" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="10" ScopeIdentifier="4fd03500-15c1-4076-864a-afe8a1442efd" Version="V3">
                             <uix:NMouseScroll.SearchedElement>
                               <uix:SearchedElement>
                                 <uix:SearchedElement.Target>
@@ -325,14 +328,19 @@
                               </uix:SearchedElement>
                             </uix:NMouseScroll.SearchedElement>
                             <uix:NMouseScroll.Target>
-                              <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=3829379761&amp;f_TPR=r2592000&amp;geoId=91000000&amp;keywords=RPA&amp;location=European%20Union&amp;origin=JOB_SEARCH_PAGE_JOB_FILTER&amp;refresh=true" DesignTimeRectangle="396, 269, 486, 108" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul' parentid='main' tag='UL' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='ember155' tag='DIV' class='job-card-container relative job-card-list&amp;#xA;        job-card-container--clickable&amp;#xA;        &amp;#xA;        job-card-list--underline-title-on-hover  jobs-search-two-pane__job-card-container--viewport-tracking-0' aaname='                                              ' check:innerText='RPA Developer&amp;#xD;&amp;#xA;Allianz Trade in Romania&amp;#xD;&amp;#xA;Romania (On-site)&amp;#xD;&amp;#xA;Promoted&amp;#xD;&amp;#xA; 1 week ago' /&gt;" Guid="48c922af-76cf-4ea7-92ae-1d909184c3e2" ScopeSelectorArgument="&lt;html app='chrome.exe' title='(2) RPA Jobs in European Union | LinkedIn' /&gt;" SearchSteps="Selector" Version="V3" Visibility="Interactive">
+                              <uix:TargetAnchorable BrowserURL="https://www.linkedin.com/jobs/search/?currentJobId=3829379761&amp;f_TPR=r2592000&amp;geoId=91000000&amp;keywords=RPA&amp;location=European%20Union&amp;origin=JOB_SEARCH_PAGE_JOB_FILTER&amp;refresh=true" DesignTimeRectangle="396, 269, 486, 108" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;ul' parentid='main' tag='UL' /&gt;" Guid="48c922af-76cf-4ea7-92ae-1d909184c3e2" SearchSteps="Selector" Version="V3" Visibility="Interactive">
                                 <uix:TargetAnchorable.Anchors>
                                   <scg:List x:TypeArguments="uix:ITarget" Capacity="0" />
                                 </uix:TargetAnchorable.Anchors>
+                                <uix:TargetAnchorable.ScopeSelectorArgument>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_28">uiChrome.Selector.Text</CSharpValue>
+                                  </InArgument>
+                                </uix:TargetAnchorable.ScopeSelectorArgument>
                               </uix:TargetAnchorable>
                             </uix:NMouseScroll.Target>
                           </uix:NMouseScroll>
-                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="WriteLine_1">
+                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="WriteLine_1">
                             <InArgument x:TypeArguments="x:String">
                               <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">"# elements: " + uiJobTitles.Count().ToString()</CSharpValue>
                             </InArgument>
@@ -344,7 +352,7 @@
                       </ui:InterruptibleDoWhile.Condition>
                     </ui:InterruptibleDoWhile>
                     <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="530,130" sap2010:WorkflowViewState.IdRef="WriteLine_4" />
-                    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each Job Result" sap:VirtualizedContainerService.HintSize="530,1318" sap2010:WorkflowViewState.IdRef="ForEach`1_4">
+                    <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each Job Result" sap:VirtualizedContainerService.HintSize="530,1301" sap2010:WorkflowViewState.IdRef="ForEach`1_4">
                       <ui:ForEach.Body>
                         <ActivityAction x:TypeArguments="ui:UiElement">
                           <ActivityAction.Argument>
@@ -442,7 +450,6 @@
                         </InArgument>
                       </ui:ForEach.Values>
                     </ui:ForEach>
-                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="530,113" sap2010:WorkflowViewState.IdRef="WriteLine_2" />
                   </Sequence>
                 </ActivityAction>
               </ui:ForEach.Body>
@@ -455,6 +462,11 @@
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.OutUiElement>
+        <OutArgument x:TypeArguments="ui:UiElement">
+          <CSharpReference x:TypeArguments="ui:UiElement" sap2010:WorkflowViewState.IdRef="CSharpReference`1_16">uiChrome</CSharpReference>
+        </OutArgument>
+      </uix:NApplicationCard.OutUiElement>
       <uix:NApplicationCard.TargetApp>
         <uix:TargetApp Area="-1928, -8, 1936, 1096" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALiSURBVFhH7VfNaxNBFN/UGJMUvdSi0Kog1YvgwYtHwZPnFj0oCFbT5GCUVmwFxYKotQdvKqJ/QRUUNRTEotmVpk1bY1H8uNh8WGtpU6utkkQ3ec5vshO3aTcNslty6IMfmX3zPn4zbzLDkypCXB4ZqHJ7lFp3i1JvMWrcPsXm9ipacm9QcpzstblalCY2GWH4bDHCDE1r/M9sTl9QktgHUKNN0AoBC8VuFwhga8CuYOTyKLTuhMyBsX7OBCAXci5NAAm3tIXo0M13HNvODJhNwpgAEm1lCXvCU/Qrk2VQqWdoihEylYQxAWz5Qbbqn2mVhGAMHeZgYwIqmEC+/qIEKi8DSoCyrEgJACTCwcOqARzIcpKzu4TblWFbmgBgPy5T1bEgx1o2RnDoUQZ8C4iE0K/3vaRNp/qp1t9fsNXH1MGYAIIhyLn7Y3Q1EOfAGDoEPHD9DXUFEnTlSZw6H8Zo94Vh2nw6RIdvv6e7wQl6+naGAqNJusb89l56RdWLk5cm4GQEdnSEafxbWjuCxMfQ2ZuDPLGQ+ZRKFx9E6VFkmp8XveQYotMpOnrnA1V7LSLwW83R5I8M5ZDNQOLJFO3rek3OheUwh4AQNZujxEyaIrH5PCFNL+TW8y+0gZ0PxNdgHoHMnyzd6BunPZ0jVN86QPu7R2lobE6bzctIdK74JjWPQPDjLNW1hsjBthgJ8M84wg4k7g8h8WSaGtoHeWzk0HKZQ6C7N7Hg7+b0yLTr/DB9/Z7RLP75W0Lg8uMYXzV8hX9D+9L+K0bAyH+VwCqBsglsPzvIL4+J2TQHxtDZm2XquPeJ33YIil98O4oIGPmXRQDAswoHsAYwhg5PMl6+nZoev3glxVO9nL/OpjQBAGz1EHrcdnp9cXIBvQ1QNL+IAJoENAvFhlYBTRCaIUlCe2T397HWTG7UJsDOSrCFyo32thc2l0/O94dMAbDmVAYrbM3/om5ZeOSNaITREFeASNJf503cP1oKQCkAAAAASUVORK5CYII=" InformativeScreenshot="54573c53cf33d286b963f972e1eee4fd.jpg" Selector="&lt;html app='chrome.exe' title='*LinkedIn' /&gt;" Title="(21) RPA Jobs in European Union | LinkedIn">
           <uix:TargetApp.Url>
@@ -464,6 +476,37 @@
           </uix:TargetApp.Url>
         </uix:TargetApp>
       </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="722,92" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,224" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="354,139" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="sample.xlsx">
+            <ui:WriteRange.DataTable>
+              <InArgument x:TypeArguments="sd:DataTable">
+                <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_31">dtJobPostings</CSharpValue>
+              </InArgument>
+            </ui:WriteRange.DataTable>
+          </ui:WriteRange>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="722,113" sap2010:WorkflowViewState.IdRef="WriteLine_2" />
   </Sequence>
 </Activity>
